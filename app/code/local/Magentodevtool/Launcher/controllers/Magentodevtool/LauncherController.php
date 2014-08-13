@@ -23,7 +23,7 @@
 * THE SOFTWARE.
 */
 require_once 'Mage/Adminhtml/controllers/IndexController.php';
-class Magentodevtool_Launcher_LauncherController extends Mage_Adminhtml_IndexController
+class Magentodevtool_Launcher_Magentodevtool_LauncherController extends Mage_Adminhtml_IndexController
 {
     public function globalSearchAction()
     {
