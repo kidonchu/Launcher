@@ -22,7 +22,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 * THE SOFTWARE.
 */
-class Alanstormdotcom_Launcher_Model_Links
+class Magentodevtool_Launcher_Model_Links
 {
     protected $_links;
     public function addLink($label, $url)

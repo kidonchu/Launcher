@@ -9,7 +9,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-class Alanstormdotcom_Launcher_Model_Observer
+class Magentodevtool_Launcher_Model_Observer
 {
     public function addNav($observer)
     {
@@ -38,7 +38,7 @@ class Alanstormdotcom_Launcher_Model_Observer
             return;
         }
     
-        $launcher_links = Mage::getSingleton('alanstormdotcom_launcher/links');
+        $launcher_links = Mage::getSingleton('magentodevtool_launcher/links');
         $block = $controller->getLayout()->createBlock('adminhtml/system_config_tabs')->initTabs();
         
         $tabs = $block->getTabs();
@@ -72,8 +72,8 @@ class Alanstormdotcom_Launcher_Model_Observer
         $before_body_end    = $layout->getBlock('before_body_end');
         
         $block = $layout->createBlock('adminhtml/template')
-        ->setTemplate('alanstormdotcom_launcher/hook.phtml')
-        ->setLinks(Mage::getSingleton('alanstormdotcom_launcher/links')->getLinks());
+        ->setTemplate('magentodevtool_launcher/hook.phtml')
+        ->setLinks(Mage::getSingleton('magentodevtool_launcher/links')->getLinks());
         
         if($before_body_end)
         {
@@ -85,7 +85,7 @@ class Alanstormdotcom_Launcher_Model_Observer
     protected function _renderDefaultNavigationJson($controller)
     {
         $layout             = $controller->getLayout();
-        $block              = $layout->createBlock('alanstormdotcom_launcher/page_menu');
+        $block              = $layout->createBlock('magentodevtool_launcher/page_menu');
         $menu               = $block->getMenuArray();
         $json               = Mage::helper('core')->jsonEncode($menu);    
         $json               = $block->secretKeyJsonStringReplace($json);
@@ -97,8 +97,8 @@ class Alanstormdotcom_Launcher_Model_Observer
         $layout             = $controller->getLayout();
         $before_body_end    = $layout->getBlock('before_body_end');
         
-        $first = Mage::getStoreConfig('alanstormdotcom_launcher/options/shortcut_code_first');
-        $second  = Mage::getStoreConfig('alanstormdotcom_launcher/options/shortcut_code_second');
+        $first = Mage::getStoreConfig('magentodevtool_launcher/options/shortcut_code_first');
+        $second  = Mage::getStoreConfig('magentodevtool_launcher/options/shortcut_code_second');
         
         $code = '17_32';        //default to ctrl-space
         if(is_numeric($first) && is_numeric($second))
@@ -108,11 +108,11 @@ class Alanstormdotcom_Launcher_Model_Observer
         
         $url = Mage::getModel('adminhtml/url');
         $search = new stdClass();
-        $search->url = $url->getUrl('adminhtml/alanstormdotcom_launcher/globalSearch');
+        $search->url = $url->getUrl('adminhtml/magentodevtool_launcher/globalSearch');
         $search = Mage::helper('core')->jsonEncode($search);
         
         $block              = $layout->createBlock('adminhtml/template')
-        ->setTemplate('alanstormdotcom_launcher/js-nav.phtml')
+        ->setTemplate('magentodevtool_launcher/js-nav.phtml')
         ->setJson($json)
         ->setSearchUrlJson($search)
         ->setCombinedCodes($code);
@@ -131,7 +131,7 @@ class Alanstormdotcom_Launcher_Model_Observer
         {
             $design = Mage::getDesign();
 
-            $head->addCss('alanstormdotcom_launcher/main.css')
+            $head->addCss('magentodevtool_launcher/main.css')
             ->addItem('js_css', 'prototype/windows/themes/default.css');
             
             //add window theme css — some versions have this in the skin, other in /js
@@ -175,7 +175,7 @@ class Alanstormdotcom_Launcher_Model_Observer
             $layout->setBlock('root', $root);
         }
 
-        $block = $layout->createBlock('alanstormdotcom_launcher/breadcrumbs', 'breadcrumbs');
+        $block = $layout->createBlock('magentodevtool_launcher/breadcrumbs', 'breadcrumbs');
         $root->insert($block);        
 	}
 	

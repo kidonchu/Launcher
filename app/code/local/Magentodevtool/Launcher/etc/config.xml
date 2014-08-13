@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <modules>
-        <Alanstormdotcom_Launcher>
+        <Magentodevtool_Launcher>
             <version>1.0.4</version>
-        </Alanstormdotcom_Launcher>
+        </Magentodevtool_Launcher>
     </modules>
     <frontend>
         <routers>
-            <alanstormdotcom_launcher>
+            <magentodevtool_launcher>
                 <use>standard</use>
                 <args>
-                    <module>Alanstormdotcom_Launcher</module>
-                    <frontName>alanstormdotcom_launcher</frontName>
+                    <module>Magentodevtool_Launcher</module>
+                    <frontName>magentodevtool_launcher</frontName>
                 </args>
-            </alanstormdotcom_launcher>
+            </magentodevtool_launcher>
         </routers>
     </frontend>
     <admin>
@@ -21,7 +21,7 @@
             <adminhtml>
                 <args>
                     <modules>
-                        <Alanstormdotcom_Launcher after="Mage_Adminhtml">Alanstormdotcom_Launcher</Alanstormdotcom_Launcher>
+                        <Magentodevtool_Launcher after="Mage_Adminhtml">Magentodevtool_Launcher</Magentodevtool_Launcher>
                     </modules>
                 </args>
             </adminhtml>
@@ -29,41 +29,41 @@
     </admin>
     <global>
         <blocks>
-            <alanstormdotcom_launcher>
-                <class>Alanstormdotcom_Launcher_Block</class>
-            </alanstormdotcom_launcher>
+            <magentodevtool_launcher>
+                <class>Magentodevtool_Launcher_Block</class>
+            </magentodevtool_launcher>
         </blocks>
         <models>
-            <alanstormdotcom_launcher>
-                <class>Alanstormdotcom_Launcher_Model</class>
-            </alanstormdotcom_launcher>
+            <magentodevtool_launcher>
+                <class>Magentodevtool_Launcher_Model</class>
+            </magentodevtool_launcher>
         </models>
         <helpers>
-            <alanstormdotcom_launcher>
-                <class>Alanstormdotcom_Launcher_Helper</class>
-            </alanstormdotcom_launcher>
+            <magentodevtool_launcher>
+                <class>Magentodevtool_Launcher_Helper</class>
+            </magentodevtool_launcher>
         </helpers>
 
         <events>
             <controller_action_layout_generate_blocks_after>
                 <observers>
-                    <alanstormdotcom_launchermore_blocks>
+                    <magentodevtool_launchermore_blocks>
                         <type>singleton</type>
-                        <class>alanstormdotcom_launcher/observer</class>
+                        <class>magentodevtool_launcher/observer</class>
                         <method>addNav</method>
-                    </alanstormdotcom_launchermore_blocks>
+                    </magentodevtool_launchermore_blocks>
 
-                    <alanstormdotcom_launcher_add_config_nav>
+                    <magentodevtool_launcher_add_config_nav>
                         <type>singleton</type>
-                        <class>alanstormdotcom_launcher/observer</class>
+                        <class>magentodevtool_launcher/observer</class>
                         <method>addConfigNav</method>
-                    </alanstormdotcom_launcher_add_config_nav>
+                    </magentodevtool_launcher_add_config_nav>
 
-                    <alanstormdotcom_launcher_hooks>
+                    <magentodevtool_launcher_hooks>
                         <type>singleton</type>
-                        <class>alanstormdotcom_launcher/observer</class>
+                        <class>magentodevtool_launcher/observer</class>
                         <method>addHookJavascript</method>
-                    </alanstormdotcom_launcher_hooks>
+                    </magentodevtool_launcher_hooks>
 
 
                 </observers>
@@ -72,11 +72,11 @@
     </global>
 
     <default>
-        <alanstormdotcom_launcher>
+        <magentodevtool_launcher>
             <options>
                 <shortcut_code_first>17</shortcut_code_first>
                 <shortcut_code_second>77</shortcut_code_second>
             </options>
-        </alanstormdotcom_launcher>
+        </magentodevtool_launcher>
     </default>
 </config>

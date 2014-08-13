@@ -7,9 +7,9 @@
                         <children>
                             <config>
                                 <children>
-                                    <alanstormdotcom_launcher>
-                                        <title>Alanstormdotcom Launcher</title>
-                                    </alanstormdotcom_launcher>
+                                    <magentodevtool_launcher>
+                                        <title>Magentodevtool Launcher</title>
+                                    </magentodevtool_launcher>
                                 </children>
                             </config>
                         </children>
