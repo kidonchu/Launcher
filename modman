@@ -1,0 +1,4 @@
+app/code/community/Magentodevtool/Launcher                              app/code/community/Magentodevtool/Launcher
+app/design/adminhtml/default/default/template/magentodevtool_launcher   app/design/adminhtml/default/default/template/magentodevtool_launcher
+app/etc/modules/Magentodevtool_Launcher.xml                             app/etc/modules/Magentodevtool_Launcher.xml
+skin/adminhtml/default/default/magentodevtool_launcher                  skin/adminhtml/default/default/magentodevtool_launcher
