@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Alanstormdotcom_Launcher>
+            <version>1.0.4</version>
+        </Alanstormdotcom_Launcher>
+    </modules>
+    <frontend>
+        <routers>
+            <alanstormdotcom_launcher>
+                <use>standard</use>
+                <args>
+                    <module>Alanstormdotcom_Launcher</module>
+                    <frontName>alanstormdotcom_launcher</frontName>
+                </args>
+            </alanstormdotcom_launcher>
+        </routers>
+    </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Alanstormdotcom_Launcher after="Mage_Adminhtml">Alanstormdotcom_Launcher</Alanstormdotcom_Launcher>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <global>
+        <blocks>
+            <alanstormdotcom_launcher>
+                <class>Alanstormdotcom_Launcher_Block</class>
+            </alanstormdotcom_launcher>
+        </blocks>
+        <models>
+            <alanstormdotcom_launcher>
+                <class>Alanstormdotcom_Launcher_Model</class>
+            </alanstormdotcom_launcher>
+        </models>
+        <helpers>
+            <alanstormdotcom_launcher>
+                <class>Alanstormdotcom_Launcher_Helper</class>
+            </alanstormdotcom_launcher>
+        </helpers>
+
+        <events>
+            <controller_action_layout_generate_blocks_after>
+                <observers>
+                    <alanstormdotcom_launchermore_blocks>
+                        <type>singleton</type>
+                        <class>alanstormdotcom_launcher/observer</class>
+                        <method>addNav</method>
+                    </alanstormdotcom_launchermore_blocks>
+
+                    <alanstormdotcom_launcher_add_config_nav>
+                        <type>singleton</type>
+                        <class>alanstormdotcom_launcher/observer</class>
+                        <method>addConfigNav</method>
+                    </alanstormdotcom_launcher_add_config_nav>
+
+                    <alanstormdotcom_launcher_hooks>
+                        <type>singleton</type>
+                        <class>alanstormdotcom_launcher/observer</class>
+                        <method>addHookJavascript</method>
+                    </alanstormdotcom_launcher_hooks>
+
+
+                </observers>
+            </controller_action_layout_generate_blocks_after>
+        </events>
+    </global>
+
+    <default>
+        <alanstormdotcom_launcher>
+            <options>
+                <shortcut_code_first>17</shortcut_code_first>
+                <shortcut_code_second>77</shortcut_code_second>
+            </options>
+        </alanstormdotcom_launcher>
+    </default>
+</config>
